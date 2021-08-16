@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBlack">
+
+
+    <TextView
+        style="@style/TitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_textview"
+        android:text="@string/moviebox_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/dimen24"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        style="@style/MiniTitleText"
+        android:id="@+id/playin_now_texview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#828282"
+        app:layout_constraintTop_toBottomOf="@id/title_textview"
+        android:gravity="start"
+        android:text="@string/playing_now_text"
+        android:paddingTop="@dimen/dimen8"
+        android:paddingBottom="@dimen/dimen8"
+        android:layout_marginTop="@dimen/dimen16"
+        android:paddingStart="@dimen/dimen16"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/poster_recyclerview"
+        app:layout_constraintTop_toBottomOf="@id/playin_now_texview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen160"
+        tools:listitem="@layout/poster_item_layout"/>
+
+    <TextView
+        style="@style/MiniTitleText"
+        android:id="@+id/most_popular_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrey"
+        app:layout_constraintTop_toBottomOf="@id/poster_recyclerview"
+        android:gravity="start"
+        android:text="@string/most_popular_text"
+        android:paddingTop="@dimen/dimen8"
+        android:paddingBottom="@dimen/dimen8"
+        android:layout_marginTop="@dimen/dimen16"
+        android:paddingStart="@dimen/dimen16"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/movie_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorGrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/most_popular_textview"
+        tools:listitem="@layout/movie_item"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
